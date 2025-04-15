@@ -19,7 +19,6 @@ export const getNotifications = async (req, res) => {
 
 export const deleteNotifications = async (req, res) => {
   const userId = req.user._id;
-
   try {
     await Notification.deleteMany({ to: userId });
     res.status(200).json({ message: "Notification Deleted Successfully" });
